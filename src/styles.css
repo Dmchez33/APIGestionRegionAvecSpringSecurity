@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    width: 100% !important;
+    margin: 0px;
+    height: 600px;
+    /* background-image: url("./assets/images/backgroundImage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* background-color: #7F4216; */
+    background-clip: border-box;
+    background-color: inherit;
+}
+
+html {
+    /* L'image est positionnée en fond et est centrée */
+    background: url("./assets/images/backgroundImage.jpg") no-repeat center center fixed;
+    /* Ajout de la propriété avec les préfixes pour tous les moteurs de rendu */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.voirplux{
+    box-shadow: 1px 1px 2px black;
+    background-color: yellow !important;
+    color: black;
+    border: 1px solid black;
+}
+.voirplux:hover{
+    box-shadow: 1px 2px 2px black;
+    color: black;
+    background-color: white !important;
+}

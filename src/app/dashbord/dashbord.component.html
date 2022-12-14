@@ -1,0 +1,471 @@
+
+<!--MENU SECONDAIRE DANS LE DASHBORD-->
+
+<ul class="nav row nav-pills mt-3 mb-2 d-flex justify-content-end" id="pills-tab" role="tablist">
+    <li class="nav-item col-md-2" role="presentation">
+        <button class="nav-link active text-center" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Liste Régions</button>
+    </li>
+    <li class="nav-item col-md-2" role="presentation">
+        <button class="nav-link text-center" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Liste Pays</button>
+    </li>
+    <li class="nav-item col-md-2" role="presentation">
+        <button class="nav-link text-center" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Liste lieux
+            Touristiques</button>
+    </li>
+</ul>
+<div class="row">
+    <div class="col-md-3">
+        <div class="row gx-3">
+            <div></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-10 Statistique position-relative text-center">
+                <div class="circle position-absolute top-0 start-50 translate-middle"></div>
+                <span class="textStatique">Superficie Totale</span>
+                <br>
+                <span class="valeur">1 241 238 km2</span>
+            </div>
+            
+            <div class="col-md-2"></div>
+            <div class="col-md-10 Statistique position-relative text-center">
+                <div class="circle position-absolute top-0 start-50 translate-middle"></div>
+                <span class="textStatique">
+                    Population totale en 20221
+                </span>
+                <br>
+                <span class="valeur">
+                    21 473 764 hab
+                </span>
+            </div>
+
+            <div class="col-md-2"></div>
+            <div class="col-md-10 Statistique position-relative text-center">
+                <div class="circle position-absolute top-0 start-50 translate-middle"></div>
+                <span class="textStatique">
+                    Densité
+                </span>
+                <br>
+                <span class="valeur">
+                    17 hab./km2
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="tab-content" id="pills-tabContent">
+
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <button class="addbtn " type="button" data-bs-toggle="modal" data-bs-target="#AjoutRegion">
+                                <img src="../../assets/images/iconadd.png" alt="" srcset="">
+                                Ajouter Région</button>
+                        </div>
+                        <div class="col-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nom Région</th>
+                                        <th scope="col">Superficie Région</th>
+
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Bootstrap 4 CDN and Starter Template</td>
+
+                                        <td class="row">
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                    srcset=""></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Bootstrap Grid 4 Tutorial and Examples</td>
+
+                                        <td class="row">
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                    srcset=""></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Bootstrap Flexbox Tutorial and Examples</td>
+
+                                        <td class="row">
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                    srcset=""></button>
+                                            <button type="button" class="btn col-md-4"><img
+                                                    src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                    srcset=""></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button class="addbtn " type="button" data-bs-toggle="modal"
+                                    data-bs-target="#AjoutPays">
+                                    <img src="../../assets/images/iconadd.png" alt="" srcset="">
+                                    Ajouter Pays</button>
+                            </div>
+                            <div class="col-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nom Pays</th>
+                                            <th scope="col">Superficie Pays</th>
+
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Bootstrap 4 CDN and Starter Template</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Bootstrap Grid 4 Tutorial and Examples</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Bootstrap Flexbox Tutorial and Examples</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                tabindex="0">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button class="addbtn " type="button" data-bs-toggle="modal"
+                                    data-bs-target="#AjoutLieuxTouristiques">
+                                    <img src="../../assets/images/iconadd.png" alt="" srcset="">
+                                    Ajouter Lieux Touristiques</button>
+                            </div>
+                            <div class="col-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nom Lieux Touristiques</th>
+                                            <th scope="col">Nom Région</th>
+
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Bootstrap 4 CDN and Starter Template</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Bootstrap Grid 4 Tutorial and Examples</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Bootstrap Flexbox Tutorial and Examples</td>
+
+                                            <td class="row">
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
+                                                        srcset=""></button>
+                                                <button type="button" class="btn col-md-4"><img
+                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
+                                                        srcset=""></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FORMULAIRE D'AJOUT DES REGIONS-->
+<div class="">
+
+</div>
+<div class="modal fade " id="AjoutRegion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered position-relative">
+
+        <div class="modal-content position-absolute top-50 start-50 translate-middle">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu Ajouter Region</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation container" novalidate>
+                    <div class="col-md-6 my-3">
+                        <label for="codeRegion" class="form-label">Code Région</label>
+                        <input type="number" class="form-control" id="codeRegion" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir le code region
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <label for="nomRegion" class="form-label">Nom Région</label>
+                        <input type="text" class="form-control" id="nomRegion" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir le nom de la region
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="domaineActivite" class="form-label">Domaine activité</label>
+                        <input type="text" class="form-control" id="domaineActivite" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir le domaine activité
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="superficieRegion" class="form-label">Superficie</label>
+                        <input type="text" class="form-control" id="superficieRegion" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir la superficie
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <label for="langue" class="form-label">Langue majoritaire</label>
+                        <input type="text" class="form-control" id="langue" required>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la langue majoritaire
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="NomPaysRegion" class="form-label">Nom Pays</label>
+                        <select class="form-select" id="NomPaysReions" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>Mali</option>
+                            <option>Cote d'Ivoire</option>
+                            <option>Benin</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Veuillez selectionner le nom du pays
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-warning p-1" type="button">Inscrire</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--FORMULAIRE D'AJOUT DES PAYS-->
+<div class="modal fade" id="AjoutPays" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu ajouter Region</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation container" novalidate>
+                    <div class="col-md-12 my-3">
+                        <label for="nomPays" class="form-label">Nom Pays</label>
+                        <input type="text" class="form-control" id="nomPays" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir le nom du Pays
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 my-3">
+                        <label for="superficiePays" class="form-label">Superficie</label>
+                        <input type="number" class="form-control" id="superficiePays" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir la superficie
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-3">
+                        <label for="imagePays" class="form-label">Image pays</label>
+                        <input class="form-control" type="file" id="imagePays" multiple />
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-warning p-1" type="button">Enregistrer</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--FORMULAIRE D'AJOUT DES Lieux Touristique -->
+<div class="modal fade" id="AjoutLieuxTouristiques" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu ajouter Lieux Touristiques</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row needs-validation container" novalidate>
+
+                    <div class="col-md-6 my-3">
+                        <label for="LieuTouristique" class="form-label">Nom Lieux Touristiques</label>
+                        <input type="text" class="form-control" id="LieuTouristique" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir le nom du Lieux Touristiques
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-3">
+                        <label for="NomRegionLieuxTouristique" class="form-label">Nom Region</label>
+                        <select class="form-select" id="NomRegionLieuxTouristique" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>Bamako</option>
+                            <option>Koulikoro</option>
+                            <option>Kayes</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Veuillez selectionner le nom de la Region
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 my-3">
+                        <label for="imageLieuxTouristiques" class="form-label">Image Lieux Touristiques</label>
+                        <input class="form-control" type="file" id="imageLieuxTouristiques" multiple />
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-warning p-1" type="button">Inscrire</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
