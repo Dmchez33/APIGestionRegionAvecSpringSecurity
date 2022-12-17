@@ -1,103 +1,81 @@
 <div class="carre row position-absolute top-50 start-50 translate-middle">
+  <div class="logoImage col-md-6 text-center">
+    <div class="row">
+      <div class="col-md-12 testmali">
+        MaliTourist
+      </div>
+      <div class="col-md-12">
+        <img src="../../assets/images/logoMali1.png" width="40%" alt="" srcset="">
+      </div>
+      <div class="col-md-12 deviseMali">
+        Republique du MALI
+      </div>
+      <div class="col-md-12 deviseMali1">
 
-    <div class="logoImage col-md-6 text-center">
-        <div class="row">
-            <div class="col-md-12 testmali">
-                MaliTourist
-            </div>
-            <div class="col-md-12">
-                <img src="../../assets/images/logoMali1.png" width="40%" alt="" srcset="">
-            </div>
-            <div class="col-md-12 deviseMali">
-                Republique du MALI
-            </div>
-            <div class="col-md-12 deviseMali1">
-
-                Un Peuple Un But Une Foi
-            </div>
+        Un Peuple Un But Une Foi
+      </div>
+    </div>
+  </div>
+  <div class="formulaire col-md-5 ">
+    <h3 class="text-center my-3">CONNEXION</h3>
+    <form class="row needs-validation container" *ngIf="!isSuccessful" name="form"
+      (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="col-md-12">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+          maxlength="20" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" />
+        <div class="invalid-feedback" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors['minlength']">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors['maxlength']">
+            Username must be at most 20 characters
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && email.errors }" />
+        <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+          #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" />
+        <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary btn-block">Sign Up</button>
+      </div>
+      <div class="form-group">
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+          Vous avez déjà un compte ? <a routerLink="/inscription">
+            Inscrire
+          </a>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
     </div>
-    <div class="formulaire col-md-5 ">
-        <h3 class="text-center my-3">INSCRIPTION</h3>
-        <form class="row g-3 needs-validation container" novalidate>
-            <div class="col-md-6">
-                <label for="nomUtilisateur" class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control" id="nomUtilisateur" required>
-                <div class="valid-feedback">
-                    Veuillez saisir le nom d'utilisateur
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <label for="motDePasse" class="form-label">N° Téléphone</label>
-                <input type="tel" class="form-control" id="motDePasse" required>
-                <div class="valid-feedback">
-                    Veuillez saisir le Numéro de téléphone
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="motDePasse" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="motDePasse" required>
-                <div class="valid-feedback">
-                    Veuillez saisir le bon Mot de passe
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="motDePasse" class="form-label">Confirmer mot de passe</label>
-                <input type="password" class="form-control" id="motDePasse" required>
-                <div class="valid-feedback">
-                    Veuillez saisir le Mot de passe
-                </div>
-            </div>
-             
-            <!-- <div class="col-md-6">
-                <label for="validationCustom03" class="form-label">Superficie</label>
-                <input type="text" class="form-control" id="validationCustom03" required>
-                <div class="invalid-feedback">
-                    Veuillez saisir la superficie de la region
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="NomPays" class="form-label">Nom Pays</label>
-                <select class="form-select" id="NomPays" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Veuillez selectionner le nom du pays
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationCustom05" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="validationCustom05" required>
-                <div class="invalid-feedback">
-                    Please provide a valid zip.
-                </div>
-            </div> -->
-             <div class="col-12">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Accepter les termes et conditions.
-                    </label>
-                    <div class="invalid-feedback">
-                        Vous devez accepter avant de soumettre.
-                    </div>
-                </div>
-            </div> 
-
-            <div class="d-grid gap-2">
-                <button class="btn p-1" type="button">Inscrire</button>
-            </div>
-            <div class="row my-2">
-                <div class="col-md-3"></div>
-                <div class="col-md-9">
-                    Vous avez déjà un compte ? <a href="http://">
-                        Connecter
-                    </a>
-                </div>
-            </div>
-        </form>
-    </div>
-
+  </div>
 </div>

@@ -1,18 +1,20 @@
-
 <!--MENU SECONDAIRE DANS LE DASHBORD-->
 
 <ul class="nav row nav-pills mt-3 mb-2 d-flex justify-content-end" id="pills-tab" role="tablist">
     <li class="nav-item col-md-2" role="presentation">
-        <button class="nav-link active text-center" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Liste Régions</button>
+        <button class="nav-link active text-center" id="pills-home-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Liste
+            Régions</button>
     </li>
     <li class="nav-item col-md-2" role="presentation">
-        <button class="nav-link text-center" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Liste Pays</button>
+        <button class="nav-link text-center" id="pills-profile-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+            aria-selected="false">Liste Pays</button>
     </li>
     <li class="nav-item col-md-2" role="presentation">
-        <button class="nav-link text-center" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Liste lieux
+        <button class="nav-link text-center" id="pills-contact-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+            aria-selected="false">Liste lieux
             Touristiques</button>
     </li>
 </ul>
@@ -27,7 +29,7 @@
                 <br>
                 <span class="valeur">1 241 238 km2</span>
             </div>
-            
+
             <div class="col-md-2"></div>
             <div class="col-md-10 Statistique position-relative text-center">
                 <div class="circle position-absolute top-0 start-50 translate-middle"></div>
@@ -77,41 +79,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-
-                                        <td class="row">
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
-                                                    srcset=""></button>
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                    srcset=""></button>
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                    srcset=""></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Bootstrap Grid 4 Tutorial and Examples</td>
-
-                                        <td class="row">
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
-                                                    srcset=""></button>
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                    srcset=""></button>
-                                            <button type="button" class="btn col-md-4"><img
-                                                    src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                    srcset=""></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Bootstrap Flexbox Tutorial and Examples</td>
+                                    <tr *ngFor="let region of region">
+                                        <th scope="row"> {{region.nomregion}} </th>
+                                        <td> {{region.superficie}} </td>
 
                                         <td class="row">
                                             <button type="button" class="btn col-md-4"><img
@@ -155,41 +125,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Bootstrap 4 CDN and Starter Template</td>
-
-                                            <td class="row">
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                        srcset=""></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Bootstrap Grid 4 Tutorial and Examples</td>
-
-                                            <td class="row">
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
-                                                        src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                        srcset=""></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Bootstrap Flexbox Tutorial and Examples</td>
+                                        <tr *ngFor="let pay of pays">
+                                            <th scope="row">{{pay.nom}}</th>
+                                            <td> {{pay.superficie}} </td>
 
                                             <td class="row">
                                                 <button type="button" class="btn col-md-4"><img
@@ -311,7 +249,8 @@
                 <form class="row g-3 needs-validation container" novalidate>
                     <div class="col-md-6 my-3">
                         <label for="codeRegion" class="form-label">Code Région</label>
-                        <input type="number" class="form-control" id="codeRegion" required>
+                        <input type="number" class="form-control" id="codeRegion" name="codeRegion"
+                            [(ngModel)]="codeRegion" required>
                         <div class="valid-feedback">
                             Veuillez saisir le code region
                         </div>
@@ -319,21 +258,24 @@
 
                     <div class="col-md-6 my-3">
                         <label for="nomRegion" class="form-label">Nom Région</label>
-                        <input type="text" class="form-control" id="nomRegion" required>
+                        <input type="text" class="form-control" id="nomRegion" name="nomRegion" [(ngModel)]="nomRegion"
+                            required>
                         <div class="valid-feedback">
                             Veuillez saisir le nom de la region
                         </div>
                     </div>
                     <div class="col-md-6 my-3">
                         <label for="domaineActivite" class="form-label">Domaine activité</label>
-                        <input type="text" class="form-control" id="domaineActivite" required>
+                        <input type="text" class="form-control" id="domaineActivite" name="domaineActivite"
+                            [(ngModel)]="domaineActivite" required>
                         <div class="valid-feedback">
                             Veuillez saisir le domaine activité
                         </div>
                     </div>
                     <div class="col-md-6 my-3">
                         <label for="superficieRegion" class="form-label">Superficie</label>
-                        <input type="text" class="form-control" id="superficieRegion" required>
+                        <input type="text" class="form-control" id="superficieRegion" name="superficieRegion"
+                            [(ngModel)]="superficieRegion" required>
                         <div class="valid-feedback">
                             Veuillez saisir la superficie
                         </div>
@@ -341,26 +283,36 @@
 
                     <div class="col-md-6 my-3">
                         <label for="langue" class="form-label">Langue majoritaire</label>
-                        <input type="text" class="form-control" id="langue" required>
+                        <input type="text" class="form-control" id="langue" name="langue" [(ngModel)]="langue" required>
                         <div class="invalid-feedback">
                             Veuillez saisir la langue majoritaire
                         </div>
                     </div>
                     <div class="col-md-6 my-3">
                         <label for="NomPaysRegion" class="form-label">Nom Pays</label>
-                        <select class="form-select" id="NomPaysReions" required>
+                        <select class="form-select" id="NomPaysReions" name="NomPaysReions" *ngFor="let pay of pays"
+                            required [(ngModel)]="NomPaysReions">
                             <option selected disabled value="">Choose...</option>
-                            <option>Mali</option>
-                            <option>Cote d'Ivoire</option>
-                            <option>Benin</option>
+                            <option value="{{pay.nom}}"> {{pay.nom}} </option>
                         </select>
                         <div class="invalid-feedback">
                             Veuillez selectionner le nom du pays
                         </div>
                     </div>
+                    <div class="col-md-12 my-3">
+                        <label for="imageRegion" class="form-label">Image pays</label>
+                        <input class="form-control" (change)="recuperationImageRegion($event)" type="file"
+                            id="imageRegion" multiple />
+                    </div>
+                    <div class="col-md-12 my-3">
+                        <label for="descriptionregion" class="form-label">Description</label>
+                        <textarea class="form-control" id="descriptionregion" name="descriptionregion"
+                            [(ngModel)]="descriptionregion" rows="3"></textarea>
+                    </div>
 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-outline-warning p-1" type="button">Inscrire</button>
+                        <button class="btn btn-outline-warning p-1" type="button"
+                            (click)="ajouterRegion()">Inscrire</button>
                     </div>
 
                 </form>
@@ -385,27 +337,44 @@
             </div>
             <div class="modal-body">
                 <form class="row g-3 needs-validation container" novalidate>
-                    <div class="col-md-12 my-3">
+                    <div class="col-md-6 my-3">
                         <label for="nomPays" class="form-label">Nom Pays</label>
-                        <input type="text" class="form-control" id="nomPays" required>
+                        <input type="text" class="form-control" id="nomPays" name="nomPays" [(ngModel)]="nomPays"
+                            required>
                         <div class="valid-feedback">
                             Veuillez saisir le nom du Pays
                         </div>
                     </div>
-
-                    <div class="col-md-12 my-3">
-                        <label for="superficiePays" class="form-label">Superficie</label>
-                        <input type="number" class="form-control" id="superficiePays" required>
+                    <div class="col-md-6 my-3">
+                        <label for="superfiepays" class="form-label">Superficie</label>
+                        <input type="text" class="form-control" id="superfiepays" name="superfiepays"
+                            [(ngModel)]="superfiepays" required>
                         <div class="valid-feedback">
                             Veuillez saisir la superficie
                         </div>
                     </div>
-                    <div class="col-md-12 my-3">
-                        <label for="imagePays" class="form-label">Image pays</label>
-                        <input class="form-control" type="file" id="imagePays" multiple />
+                    <div class="col-md-6 my-3">
+                        <label for="densitepays" class="form-label">Densité</label>
+                        <input type="text" class="form-control" id="densitepays" name="densitepays"
+                            [(ngModel)]="densitepays" required>
+                        <div class="valid-feedback">
+                            Veuillez saisir la densité
+                        </div>
                     </div>
+                    <div class="col-md-6 my-3">
+                        <label for="imagePays" class="form-label">Image pays</label>
+                        <input class="form-control" (change)="recuperationImagePays($event)" type="file" id="imagePays"
+                            multiple />
+                    </div>
+                    <div class="col-md-12 my-3">
+                        <label for="descriptionpays" class="form-label">Description pays</label>
+                        <textarea class="form-control" id="descriptionpays" name="descriptionpays"
+                            [(ngModel)]="descriptionpays" rows="3"></textarea>
+                    </div>
+
+
                     <div class="d-grid gap-2">
-                        <button class="btn btn-outline-warning p-1" type="button">Enregistrer</button>
+                        <button class="btn btn-outline-warning p-1" (click)="ajouterPays()">Enregistrer</button>
                     </div>
 
                 </form>
@@ -432,20 +401,20 @@
                 <form class="row needs-validation container" novalidate>
 
                     <div class="col-md-6 my-3">
-                        <label for="LieuTouristique" class="form-label">Nom Lieux Touristiques</label>
-                        <input type="text" class="form-control" id="LieuTouristique" required>
+                        <label for="nomLieux" class="form-label">Nom Lieux Touristiques</label>
+                        <input type="text" class="form-control" id="nomLieux" name="nomLieux" [(ngModel)]="nomLieux"
+                            required>
                         <div class="valid-feedback">
                             Veuillez saisir le nom du Lieux Touristiques
                         </div>
                     </div>
 
                     <div class="col-md-6 my-3">
-                        <label for="NomRegionLieuxTouristique" class="form-label">Nom Region</label>
-                        <select class="form-select" id="NomRegionLieuxTouristique" required>
+                        <label for="nomRegionLieux" class="form-label">Nom Region</label>
+                        <select class="form-select" id="nomRegionLieux" name="nomRegionLieux"
+                            [(ngModel)]="nomRegionLieux"  required>
                             <option selected disabled value="">Choose...</option>
-                            <option>Bamako</option>
-                            <option>Koulikoro</option>
-                            <option>Kayes</option>
+                            <option *ngFor="let region of region"> {{region.nomregion}} </option>
                         </select>
                         <div class="invalid-feedback">
                             Veuillez selectionner le nom de la Region
@@ -453,12 +422,20 @@
                     </div>
 
                     <div class="col-md-12 my-3">
-                        <label for="imageLieuxTouristiques" class="form-label">Image Lieux Touristiques</label>
-                        <input class="form-control" type="file" id="imageLieuxTouristiques" multiple />
+                        <label for="imageLieux" class="form-label">Image Lieux Touristiques</label>
+                        <input class="form-control" type="file" id="imageLieux" name="imageLieux"
+                        (change)="recuperationImageLieux($event)" multiple />
+                    </div>
+
+                    <div class="col-md-12 my-3">
+                        <label for="descriptionLieux" class="form-label">Description pays</label>
+                        <textarea class="form-control" id="descriptionLieux" name="descriptionLieux"
+                            [(ngModel)]="descriptionLieux" rows="3"></textarea>
                     </div>
 
                     <div class="d-grid gap-2">
-                        <button class="btn btn-outline-warning p-1" type="button">Inscrire</button>
+                        <button class="btn btn-outline-warning p-1" (click)="ajouterLieux()"
+                            type="button">Enregistrer</button>
                     </div>
 
                 </form>
