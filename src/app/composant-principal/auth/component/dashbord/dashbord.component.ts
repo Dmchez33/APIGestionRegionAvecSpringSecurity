@@ -121,6 +121,7 @@ export class DashbordComponent implements OnInit {
     this.regionService.suprimerRegion(id).subscribe({
       next : data =>{
         console.log(data);
+        this.aletre();
       }, error: err =>{
         console.log(err);
       }

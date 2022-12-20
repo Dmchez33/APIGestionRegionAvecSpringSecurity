@@ -60,7 +60,7 @@ export class RegionService {
 
   //SUPRIMER REGION
   suprimerRegion(id:any):Observable<any>{
-    return this.http.delete(`${AUTH_API}/supprimer_region${id}`);
+    return this.http.delete(`${AUTH_API}/supprimer_region/${id}`);
   }
 
 
