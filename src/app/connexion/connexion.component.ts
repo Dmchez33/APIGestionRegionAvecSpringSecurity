@@ -37,7 +37,7 @@ export class ConnexionComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.storageService.getUser().roles;
         // this.reloadPage();
-        this.router.navigate(['/accueil'])
+        this.router.navigate(['/contenu'])
 
 
       },

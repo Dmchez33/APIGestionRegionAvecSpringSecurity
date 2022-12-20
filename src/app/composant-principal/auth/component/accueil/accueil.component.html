@@ -1,0 +1,78 @@
+<div class="ACCUEIL">
+    <!--Premiere ligne concernant le carrousel-->
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+            <li data-target="#carouselExampleControls" *ngFor="let lieu of lieux; let index = index"
+                [attr.data-slide-to]="index"></li>
+        </ol> -->
+        <div class="carousel-inner">
+            <div class="carousel-item c-itm" *ngFor="let lieu of lieux; let index = index; let isFirst = first"
+                [ngClass]="{active:isFirst}">
+                <img [src]="lieu.image" class="d-block w-100 c-img" [alt]="lieu.nom">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 [textContent]="lieu.nom"></h5>
+                    <p [textContent]="lieu.description"></p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+
+
+
+
+    <!--PREMIERE D'DESCRIPTION DANS LA PAGE D'ACCUEIL-->
+
+    <div class="card mb-3 mt-3">
+        <div class="row " *ngFor="let pay of pays">
+
+            <div class="col-md-8 p-3 ps-md-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{pay.nom}}</h5>
+                    <!-- <div class="card-text">
+                        <ul>
+                            <li><span class="card-text-title">Langue Majoritaire : </span> {{regionDetails.languemajoritaire}} </li>
+                            <li><span class="card-text-title">Domaine Activité : </span> {{regionDetails.domaineactivite}} </li>
+                            <li><span class="card-text-title">Superficie : </span> {{regionDetails.superficie}} </li>
+                        </ul> -->
+
+                    <p class="card-text">
+                        {{pay.description}}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-4 p-md-2">
+                <img src={{pay.image}} alt="Image du mali" class=" rounded-start image1 w-100" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="row mt-3">
+    <div class="col-md-5">
+        <img src="../../assets/images/Mali-francophone.jpg" width="100%" alt="" srcset="">
+    </div>
+
+    <div class="col-md-7 contentStyle">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore soluta nesciunt sed excepturi
+        dignissimos
+        neque, atque autem inventore aspernatur quo recusandae? Obcaecati incidunt odit, voluptatibus asperiores
+        voluptate beatae autem deserunt?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore soluta nesciunt sed excepturi
+        dignissimos
+        neque, atque autem inventore aspernatur quo recusandae? Obcaecati incidunt odit, voluptatibus asperiores
+        voluptate beatae autem deserunt?
+    </div>
+</div> -->

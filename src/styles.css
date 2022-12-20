@@ -24,6 +24,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    filter: brightness(0.8);
 }
 
 .voirplux{
@@ -36,4 +37,8 @@ html {
     box-shadow: 1px 2px 2px black;
     color: black;
     background-color: white !important;
+}
+
+.active{
+    color: #00FF00 !important;
 }
