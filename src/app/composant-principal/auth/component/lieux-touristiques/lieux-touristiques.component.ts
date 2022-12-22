@@ -19,7 +19,7 @@ region: any;
 lieux: any;
 
 //VARIABLE CONTENANT URL DE DETAIL LIEUX TOURISQUE
-url = '/contenu/detail-lieux'
+url = '/contenu/lieuTouristique/detail-lieux'
   constructor(private regionService: RegionService, private paysService: PaysService) { }
 
   ngOnInit(): void {
@@ -43,5 +43,7 @@ url = '/contenu/detail-lieux'
       console.log(data)
     })
   }
+
+  
 
 }

@@ -1,0 +1,91 @@
+<div class="card mb-3  container">
+    <div class="row g-0">
+        <div class="col-md-3 col-md-4 mb-md-0 p-md-4">
+            <img src={{Lieux.image}} alt="Trendy Pants and Shoes" class="img-fluid rounded-start w-100" />
+        </div>
+        <div class="col-md-8 p-4 ps-md-0">
+            <div class="card-body">
+                <h3 class="card-title text-center">{{Lieux.nom}}</h3>
+                <!-- <div class="card-text">
+                    <ul>
+                        <li><span class="card-text-title">Langue Majoritaire : </span>
+                            {{regionDetails.languemajoritaire}} </li>
+                        <li><span class="card-text-title">Domaine Activité : </span> {{regionDetails.domaineactivite}}
+                        </li>
+                        <li><span class="card-text-title">Superficie : </span> {{regionDetails.superficie}} </li>
+                    </ul>
+                </div> -->
+                <p class="card-text">
+                    {{Lieux.description}}
+                </p>
+                <!-- <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </p> -->
+            </div>
+        </div>
+    </div>
+
+    <!--ENVOIE DE COMMENTAIRE-->
+    <hr>
+    <div class="row form">
+        <h3 class="text-center my-3">Laisser un Commentaire </h3>
+        <!-- <p>Pour toutes questions Veuillez  </p> -->
+        <div class="col-md-5">
+            <form class="row">
+                <div class="mb-3 col-12">
+                    <label for="comment" class="form-label">Commentaire</label>
+                    <textarea class="form-control" id="comment" name="comment" [(ngModel)]="comment"
+                        rows="3"></textarea>
+                </div>
+                <div class="col-12 mb-2">
+                    <button class="btn btn-outline-warning" type="submit" (click)="ajoutComment()">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-7">
+            
+            <div *ngFor="let commt of comments.slice().reverse()" class="row">
+                <div class="col-md-2 my-2">
+                    <img src="../../../../../assets/imageProfile/profil.png" class="ProfilImage" alt="Profil user" />
+                </div>
+                <div class="card col-md-8 my-2">
+                    
+                    <div class="">
+                        <h5 class="card-title">{{commt.idUser.username}}</h5>
+                        <p class="card-text text-truncate">
+                            {{commt.comment }}
+                        </p>
+
+                    </div>
+                    <div class="suprimer" *ngIf="showAdmin">
+                        <button class="btn col-md-4"  data-bs-toggle="modal" data-bs-target="#supCom"><img src="../../assets/images/Frame 10.png"
+                                                    width="30px" alt="logo3" srcset=""></button>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="supCom" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                            <div class="modal-body">
+                                <p>Êtes vous sur de vouloirs suprimer</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Non</button>
+                                <button type="button" class="btn btn-outline-danger" (click)="deleteComment(commt.id)" data-bs-dismiss="modal">Oui</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

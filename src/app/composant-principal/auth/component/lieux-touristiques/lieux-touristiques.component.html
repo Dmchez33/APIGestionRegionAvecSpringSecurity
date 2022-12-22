@@ -7,16 +7,14 @@
                 <img src={{region.image}} class="card-img-top" alt="Sunset Over the Sea" />
                 <div class="card-body">
                     <h5 class="card-title">{{region.nom}}</h5>
-                    <p class="card-text text-truncate">
-                        {{region.description}}
+                    <p class="card-text">
+                        {{region.description | slice:0:50}}..
                     </p>
                     <div class="text-center">
                         <a [routerLink]="[url,region.nom]" class="btn btn-primary voirplux">Voir plus</a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        
+        </div>  
     </div>
 </div>

@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RegionService } from 'src/app/service/region.service';
 import { StorageService } from 'src/app/service/storage.service';
-import { RegionService } from '../../../../service/region.service';
 
 @Component({
-  selector: 'app-detail-lieux-touristique',
-  templateUrl: './detail-lieux-touristique.component.html',
-  styleUrls: ['./detail-lieux-touristique.component.css']
+  selector: 'app-lieu-detail',
+  templateUrl: './lieu-detail.component.html',
+  styleUrls: ['./lieu-detail.component.css']
 })
-export class DetailLieuxTouristiqueComponent implements OnInit {
+export class LieuDetailComponent implements OnInit {
+
+  //VARIABLE CONTENANT UN LIEUX TOURISQUE
+  Lieux:any;
+  idlieux:any;
 
   isLoggedIn = false;
 
@@ -31,30 +35,16 @@ export class DetailLieuxTouristiqueComponent implements OnInit {
 
   //VARIABLE CONTENANT L'URL DE LIEU DETAIL
   URL :any
-
-
-  constructor(private regionService: RegionService,private route: ActivatedRoute, private storageService: StorageService) { }
+  idLieu: any;
+  constructor(private lieuxService: RegionService, private route: ActivatedRoute, private regionService: RegionService, private storageService: StorageService) { }
 
   ngOnInit(): void {
-
-    this.idLieux = this.route.snapshot.params['id'];
-   this.URL = '/contenu/lieuTouristique/detail-lieux/'+this.idLieux+'/lieu-detail';
-   console.log(this.URL);
-    //METHODE PERMETTANT DE RETOURNERLES LES DETAILS D4UNE REGION
-    this.regionService.listerRegionById(this.idLieux).subscribe(data =>{
-      this.regionDetails = data;
-      this.nomRegion = this.regionDetails.nom
-      console.log(this.regionDetails.nom);
-      this.regionService.getCommentbyID(this.nomRegion).subscribe(data =>{
-        this.comments = data;
-        console.log(data)
-      })
-    })
-
-    //METHODE PERMETTANT DE RECUPERER LA LISTE DES LIEUX TOURISQUE PAR LE NOM DE LA REGION
-    this.regionService.listerLieuxNomRegion(this.idLieux).subscribe(data =>{
-      this.lieux = data;
-      console.log(data)
+    //RECUPERATION DE ID DU LIEUX
+    this.idlieux = this.route.snapshot.params['idL'];
+    //RECUPERATION DU LIEUX
+    this.lieuxService.listerLieuxById(this.idlieux).subscribe(data =>{
+      this.Lieux = data;
+      console.log(data);
     })
 
     //RECUPERATION DE L'ID DE USER
@@ -69,8 +59,22 @@ export class DetailLieuxTouristiqueComponent implements OnInit {
       this.showAdmin = this.roles.includes('ROLE_ADMIN');
 
     }
-    
+
+    this.idLieu = this.route.snapshot.params['id'];
+
+    //METHODE PERMETTANT DE RETOURNERLES LES DETAILS D4UNE REGION
+    this.regionService.listerRegionById(this.idLieu).subscribe(data =>{
+      this.regionDetails = data;
+      this.nomRegion = this.regionDetails.nom
+      console.log(this.regionDetails.nom);
+      this.regionService.getCommentbyID(this.nomRegion).subscribe(data =>{
+        this.comments = data;
+        console.log(data)
+      })
+    })
+
   }
+
   //AJOUT DE COMMENTAIRE
   ajoutComment(){
     console.log(this.nomRegion);
@@ -82,10 +86,7 @@ export class DetailLieuxTouristiqueComponent implements OnInit {
     })
   
   }
-//ACTUALISER LA PAGE
-  reloadPage(): void {
-    window.location.reload();
-  }
+
   alet(): void {
     setTimeout(() => {
       this.getAllComment();
@@ -108,7 +109,5 @@ export class DetailLieuxTouristiqueComponent implements OnInit {
   })
   this.alet();
  }
-
-  
 
 }

@@ -77,6 +77,12 @@ export class RegionService {
     return this.http.get(`${AUTH_APILIEUX}/list_lieuxbyNomRegion/${nom}`);
   }
 
+  //METHODE PERMETTANT DE LISTER LIEU TOURISQUE PAR SON ID
+
+  listerLieuxById(id: String): Observable<any> {
+    return this.http.get(`${AUTH_APILIEUX}/liste/${id}`);
+  }
+
   //METHODE PERMETTANT D'AJOUTER UN LIEUX TOURISQUE DANS LA BASE DE DONNEE
 
   ajouterLieux(file: File, nomLieux: any, descriptionLieux: any, nomRegion: any): Observable<any> {
@@ -124,6 +130,11 @@ export class RegionService {
   //GETT COMMENT
   getCommentbyID(nomRegion: any): Observable<any> {
     return this.http.get(`${AUTH_API}/lireCommentbyID/${nomRegion}`)
+  }
+
+  //DELETE COMMENT
+  deleteComment(idComment: any):Observable<any>{
+    return this.http.delete(`${AUTH_API}/suprimer/${idComment}`);
   }
 
 

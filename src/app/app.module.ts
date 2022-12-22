@@ -15,6 +15,7 @@ import { httpInterceptorProviders } from './requetteInterc/authentifier.intercep
 import { DetailLieuxTouristiqueComponent } from './composant-principal/auth/component/detail-lieux-touristique/detail-lieux-touristique.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ContenuComponent } from './composant-principal/auth/component/contenu/contenu.component';
+import { LieuDetailComponent } from './composant-principal/auth/component/lieu-detail/lieu-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ContenuComponent } from './composant-principal/auth/component/contenu/c
     MenuComponent,
     DetailLieuxTouristiqueComponent,
     ContenuComponent,
+    LieuDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+textarea{
+    border: 1px solid black !important;
+    border-radius: 0px !important;
+    box-shadow: 1px 1px 4px black;
+  }
+
+  .ProfilImage{
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+  }

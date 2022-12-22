@@ -10,7 +10,7 @@ export class InscriptionComponent implements OnInit {
 
   form: any = {
     username: null,
-    email: null,
+    telephone: null,
     password: null
   };
   isSuccessful = false;
@@ -23,9 +23,9 @@ export class InscriptionComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, email, password } = this.form;
+    const { username, telephone, password } = this.form;
 
-    this.authService.register(username, email, password).subscribe({
+    this.authService.register(username, telephone, password).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;

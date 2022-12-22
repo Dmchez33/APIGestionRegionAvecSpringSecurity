@@ -86,16 +86,15 @@
                                         <td> {{region.superficie}} </td>
 
                                         <td class="row">
-                                            <button type="button" class="btn col-md-4"><img
+                                            <!-- <button type="button" class="btn col-md-4"><img
                                                     src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
                                                     srcset=""></button>
                                             <button type="button" class="btn col-md-4"><img
                                                     src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                    srcset=""></button>
-                                            <button (click)="suprimerRegion(region.id)" type="submit"
-                                                
+                                                    srcset=""></button> -->
+                                            <!-- <button (click)="suprimerRegion(region.id)" type="submit"
                                                 class="btn col-md-4"><img src="../../assets/images/Frame 10.png"
-                                                    width="30px" alt="logo3" srcset=""></button>
+                                                    width="30px" alt="logo3" srcset=""></button> -->
                                         </td>
                                     </tr>
                                 </tbody>
@@ -135,15 +134,16 @@
                                             <td> {{pay.superficie}} </td>
 
                                             <td class="row">
-                                                <button type="button" class="btn col-md-4"><img
+                                                <!-- <button type="button" class="btn col-md-4"><img
                                                         src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
+                                                        srcset=""></button>-->
+                                                <button data-bs-toggle="modal" data-bs-target="#modifierP" type="button"
+                                                    class="btn col-md-4" (click)="getPaysById(pay.nom)"><img
                                                         src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
                                                         srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
+                                                <!-- <button type="button" class="btn col-md-4"><img
                                                         src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                        srcset=""></button>
+                                                        srcset=""></button> -->
                                             </td>
                                         </tr>
                                     </tbody>
@@ -179,20 +179,20 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let lieu of lieux">
-                                            <td> <img src={{lieu.image}} class="img" alt="imageRegion" srcset=""> </td>
+                                            <td> <img src={{lieu.image}} class="img" alt="imageRegion"> </td>
                                             <th scope="row">{{lieu.nom}}</th>
                                             <td>{{lieu.idRegion.nom}}</td>
 
                                             <td class="row">
-                                                <button type="button" class="btn col-md-4"><img
+                                                <!-- <button type="button" class="btn col-md-4"><img
                                                         src="../../assets/images/Frame 8.png" width="30px" alt="logo1"
                                                         srcset=""></button>
                                                 <button type="button" class="btn col-md-4"><img
                                                         src="../../assets/images/Frame 9.png" width="30px" alt="logo2"
-                                                        srcset=""></button>
-                                                <button type="button" class="btn col-md-4"><img
+                                                        srcset=""></button> -->
+                                                <!-- <button type="button" class="btn col-md-4"><img
                                                         src="../../assets/images/Frame 10.png" width="30px" alt="logo3"
-                                                        srcset=""></button>
+                                                        srcset=""></button> -->
                                             </td>
                                         </tr>
                                     </tbody>
@@ -213,20 +213,26 @@
 </div>
 <div class="modal fade " id="AjoutRegion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog modal-lg modal-dialog-centered position-relative">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 
-        <div class="modal-content position-absolute top-50 start-50 translate-middle">
+        <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Menu Ajouter Region</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div *ngIf="isTrueR" class="alert alert-success text-center" role="alert">
+                    Region ajouter avec success !!
+                </div>
+                <div *ngIf="isNoTrueR" class="alert alert-danger text-center" role="alert">
+                    Erreur lors de l'ajout
+                </div>
                 <form class="row g-3 needs-validation container" novalidate>
                     <div class="col-md-6 my-3">
                         <label for="codeRegion" class="form-label">Code Région</label>
                         <input type="number" class="form-control" id="codeRegion" name="codeRegion"
                             [(ngModel)]="codeRegion" required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir le code region
                         </div>
                     </div>
@@ -235,7 +241,7 @@
                         <label for="nomRegion" class="form-label">Nom Région</label>
                         <input type="text" class="form-control" id="nomRegion" name="nomRegion" [(ngModel)]="nomRegion"
                             required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir le nom de la region
                         </div>
                     </div>
@@ -243,7 +249,7 @@
                         <label for="domaineActivite" class="form-label">Domaine activité</label>
                         <input type="text" class="form-control" id="domaineActivite" name="domaineActivite"
                             [(ngModel)]="domaineActivite" required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir le domaine activité
                         </div>
                     </div>
@@ -251,7 +257,7 @@
                         <label for="superficieRegion" class="form-label">Superficie</label>
                         <input type="text" class="form-control" id="superficieRegion" name="superficieRegion"
                             [(ngModel)]="superficieRegion" required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir la superficie
                         </div>
                     </div>
@@ -277,12 +283,18 @@
                     <div class="col-md-12 my-3">
                         <label for="imageRegion" class="form-label">Image pays</label>
                         <input class="form-control" (change)="recuperationImageRegion($event)" type="file"
-                            id="imageRegion" multiple />
+                            id="imageRegion" multiple required />
+                        <div class="invalid-feedback">
+                            Veuillez selectionner l'image
+                        </div>
                     </div>
                     <div class="col-md-12 my-3">
                         <label for="descriptionregion" class="form-label">Description</label>
                         <textarea class="form-control" id="descriptionregion" name="descriptionregion"
-                            [(ngModel)]="descriptionregion" rows="3"></textarea>
+                            [(ngModel)]="descriptionregion" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la description
+                        </div>
                     </div>
 
                     <div class="d-grid gap-2">
@@ -307,16 +319,22 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu ajouter Region</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu ajouter Pays</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <div *ngIf="isTrueP" class="alert alert-success text-center" role="alert">
+                    Pays ajouter avec success !!
+                </div>
+                <div *ngIf="isNoTrueP" class="alert alert-danger text-center" role="alert">
+                    Erreur lors de l'ajout
+                </div>
                 <form class="row g-3 needs-validation container" novalidate>
                     <div class="col-md-6 my-3">
                         <label for="nomPays" class="form-label">Nom Pays</label>
                         <input type="text" class="form-control" id="nomPays" name="nomPays" [(ngModel)]="nomPays"
                             required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir le nom du Pays
                         </div>
                     </div>
@@ -324,7 +342,7 @@
                         <label for="superfiepays" class="form-label">Superficie</label>
                         <input type="text" class="form-control" id="superfiepays" name="superfiepays"
                             [(ngModel)]="superfiepays" required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir la superficie
                         </div>
                     </div>
@@ -332,19 +350,25 @@
                         <label for="densitepays" class="form-label">Densité</label>
                         <input type="text" class="form-control" id="densitepays" name="densitepays"
                             [(ngModel)]="densitepays" required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir la densité
                         </div>
                     </div>
                     <div class="col-md-6 my-3">
                         <label for="imagePays" class="form-label">Image pays</label>
                         <input class="form-control" (change)="recuperationImagePays($event)" type="file" id="imagePays"
-                            multiple />
+                            multiple required />
+                        <div class="invalid-feedback">
+                            Veuillez selectionner l'image
+                        </div>
                     </div>
                     <div class="col-md-12 my-3">
                         <label for="descriptionpays" class="form-label">Description pays</label>
                         <textarea class="form-control" id="descriptionpays" name="descriptionpays"
-                            [(ngModel)]="descriptionpays" rows="3"></textarea>
+                            [(ngModel)]="descriptionpays" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la description
+                        </div>
                     </div>
 
 
@@ -385,7 +409,7 @@
                         <label for="nomLieux" class="form-label">Nom Lieux Touristiques</label>
                         <input type="text" class="form-control" id="nomLieux" name="nomLieux" [(ngModel)]="nomLieux"
                             required>
-                        <div class="valid-feedback">
+                        <div class="invalid-feedback">
                             Veuillez saisir le nom du Lieux Touristiques
                         </div>
                     </div>
@@ -405,13 +429,19 @@
                     <div class="col-md-12 my-3">
                         <label for="imageLieux" class="form-label">Image Lieux Touristiques</label>
                         <input class="form-control" type="file" id="imageLieux"
-                            (change)="recuperationImageLieux($event)" multiple />
+                            (change)="recuperationImageLieux($event)" multiple required />
+                        <div class="invalid-feedback">
+                            Veuillez selectionner une image
+                        </div>
                     </div>
 
                     <div class="col-md-12 my-3">
                         <label for="descriptionLieux" class="form-label">Description pays</label>
                         <textarea class="form-control" id="descriptionLieux" name="descriptionLieux"
                             [(ngModel)]="descriptionLieux" rows="3"></textarea>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la description
+                        </div>
                     </div>
 
                     <div class="d-grid gap-2">
@@ -440,13 +470,80 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
             <div class="modal-body">
-                <p>Êtes vous sur de vouloirs vous déconnecter</p>
+                <p>Êtes vous sur de vouloirs suprimer</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Non</button>
-                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
-                    >Oui</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Oui</button>
             </div>
         </div>
     </div>
+</div>
+
+
+<!--FORMULAIRE DE MODIFICATION DES PAYS-->
+<div class="modal fade" id="modifierP" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Menu modifier Region</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="isTrueP" class="alert alert-success text-center" role="alert">
+                    Pays Modifier avec success !!
+                </div>
+                <!-- <div *ngIf="isNoTrueP" class="alert alert-danger text-center" role="alert">
+                    Erreur lors de l'ajout
+                </div> -->
+                <form class="row g-3 needs-validation container" novalidate>
+                    <div class="col-md-6 my-3">
+                        <label for="NomPM" class="form-label">Nom Pays</label>
+                        <input type="text" class="form-control" id="NomPM" name="NomPM" [(ngModel)]="NomPM" required>
+                        <div class="invalid-feedback">
+                            Veuillez saisir le nom du Pays
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="superPL" class="form-label">Superficie</label>
+                        <input type="text" class="form-control" id="superPL" value="test@example.com" name="superPL"
+                            [(ngModel)]="superPL" required>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la superficie
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="densitePM" class="form-label">Densité</label>
+                        <input type="text" class="form-control" id="densitePM" name="densitePM" [(ngModel)]="densitePM"
+                            required>
+                        <div class="invalid-feedback">
+                            Veuillez saisir la densité
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-3">
+                        <label for="imagePays" class="form-label">Image pays</label>
+                        <input class="form-control" (change)="recuperationImagePaysM($event)" type="file" id="imagePays"
+                            multiple />
+                    </div>
+                    <div class="col-md-12 my-3">
+                        <label for="descripPM" class="form-label">Description pays</label>
+                        <textarea class="form-control" id="descripPM" name="descripPM" [(ngModel)]="descripPM"
+                            rows="3"></textarea>
+                    </div>
+
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-warning p-1"
+                            (click)="modifierPays(paysParNom.id)">Enregistrer</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

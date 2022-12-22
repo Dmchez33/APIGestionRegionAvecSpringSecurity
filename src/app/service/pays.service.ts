@@ -50,7 +50,7 @@ export class PaysService {
     }]
     data.append('file', file);
     data.append('pays', JSON.stringify(pays).slice(1, JSON.stringify(pays).lastIndexOf(']')));
-    return this.http.post(`${AUTH_API}/modifier_pays/${id}`, data);
+    return this.http.put(`${AUTH_API}/modifier_pays/${id}`, data);
   }
 
 }

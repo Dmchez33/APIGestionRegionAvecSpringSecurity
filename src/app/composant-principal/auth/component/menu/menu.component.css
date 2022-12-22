@@ -31,3 +31,7 @@
 .active{
     color: #00FF00 !important;
 }
+
+.bg-light{
+    border-color: 1px #00FF00  solid !important;
+}

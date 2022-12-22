@@ -31,7 +31,7 @@
 <div class="row">
     <h3 class="col-md-12 text-center my-2">Quelques Lieux Touristiques à {{regionDetails.nom}}</h3>
     <div class="col-md-3" *ngFor="let lieu of lieux">
-        <div class="card">
+        <div class="card lieux" [routerLink]="[URL,lieu.id]">
             <img src={{lieu.image}} class="card-img-top" alt="Sunset Over the Sea" />
             <div class="card-body">
                 <h5 class="card-title">{{lieu.nom}}</h5>
@@ -42,42 +42,5 @@
             </div>
         </div>
         <!-- <ng-image-slider [images]="lieu.image" #navigation></ng-image-slider> -->
-    </div>
-</div>
-
-<div class="card my-3">
-    <div class="row form">
-        <div class="col-md-6">
-            <form class="row">
-                <div class="mb-3 col-12">
-                    <label for="comment" class="form-label">commentaire</label>
-                    <textarea class="form-control" id="comment" name="comment" [(ngModel)]="comment"
-                        rows="3"></textarea>
-                </div>
-                <div class="col-12 mb-2">
-                    <button class="btn btn-outline-warning" type="submit" (click)="ajoutComment()">Envoyer</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="col-md-6 ">
-            <h4 class="text-center">Les commentaire</h4>
-            <div *ngFor="let commt of comments.slice().reverse()" class="row">
-                <div class="col-md-3 my-2">
-                    <img src="../../../../../assets/imageProfile/profil.png" class="ProfilImage" alt="Profil user" />
-                </div>
-                <div class="card col-md-9 my-2">
-                    
-                    <div class="">
-                        <h5 class="card-title">{{commt.idUser.username}}</h5>
-                        <p class="card-text text-truncate">
-                            {{commt.comment }}
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 </div>
